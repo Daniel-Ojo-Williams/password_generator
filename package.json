@@ -1,5 +1,7 @@
 {
   "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "ts-jest": "^29.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   },
@@ -8,7 +10,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start:dev": "ts-node ./src/app.ts"
+    "start:dev": "ts-node ./src/app.ts",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",

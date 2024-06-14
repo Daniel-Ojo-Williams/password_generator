@@ -1,8 +1,8 @@
 function passwordGenerator(strength: number, length: number) {
 
-  if (strength < 1 || strength > 4) throw Error('Strength has to be a digit between 1 and 4');
+  if (strength < 1 || strength > 4) throw new Error('Strength has to be a digit between 1 and 4');
 
-  if (length < 4) throw new Error('Password can\'t be less than 4 characters, please check and try again');
+  if (length < 4|| length > 20) throw new Error('Password characters can not be less than 4 or more than 20 characters, please check and try again');
 
   const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const lowerCase = 'abcdefghijklmnopqrstuvwxyz'
@@ -37,7 +37,7 @@ function passwordGenerator(strength: number, length: number) {
     return char;
   }
 
-  for (let i = 0; i <= length; i++) {
+  for (let i = 0; i < length; i++) {
     let char = genRandPaswwd();
 
     // --| This ensure there are no duplicate values in the password
@@ -51,4 +51,4 @@ function passwordGenerator(strength: number, length: number) {
   return password;
 }
 
-console.log(passwordGenerator(2, 8));
+export default passwordGenerator;
