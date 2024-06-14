@@ -31,13 +31,24 @@ function passwordGenerator(strength: number, length: number) {
       throw new Error('Strength has to be between 1 and 4')
   }
 
-  for (let i = 0; i <= length; i++) {
+  function genRandPaswwd() {
     // --| Get a random number between 0 and the number of characters in the password character set based on strength chosen
-    const char = passChars[Math.floor(Math.random() * passChars.length)]
+    const char = passChars[Math.floor(Math.random() * passChars.length)];
+    return char;
+  }
+
+  for (let i = 0; i <= length; i++) {
+    let char = genRandPaswwd();
+
+    // --| This ensure there are no duplicate values in the password
+    while (password.includes(char)) {
+      char = genRandPaswwd();
+    }
+
     password += char;
   }
 
   return password;
 }
 
-console.log(passwordGenerator(4, 8));
+console.log(passwordGenerator(2, 8));
