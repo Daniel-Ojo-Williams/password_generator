@@ -1,5 +1,7 @@
 {
   "devDependencies": {
+    "@types/babel__core": "^7.20.5",
+    "@types/babel-generator": "^6.25.8",
     "@types/jest": "^29.5.12",
     "ts-jest": "^29.1.4",
     "ts-node": "^10.9.2",
@@ -10,6 +12,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "start:dev": "ts-node ./src/app.ts",
     "test": "jest"
   },
